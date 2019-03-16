@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TimmyGQuiz</string>
+    <string name="question_text">
+        Правда ли, что TIS в рабочее время занимается своими деоами
+    </string>
+    <string name="true_button">Инфа сотка</string>
+    <string name="false_button">Бред</string>
 </resources>
