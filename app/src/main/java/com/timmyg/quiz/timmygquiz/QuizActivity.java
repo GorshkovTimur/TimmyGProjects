@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +16,8 @@ public class QuizActivity extends AppCompatActivity {
     private TextView question_textview;
     private Button trueButton;
     private Button falseButton;
-    private Button nextButton;
+    private ImageButton nextButton;
+    private ImageButton prevButton;
 
     private Question[] questionBank = new Question[]{
       new Question(R.string.tis, true),
@@ -34,6 +36,13 @@ public class QuizActivity extends AppCompatActivity {
 
         question_textview = (TextView)findViewById(R.id.question_text_view);
         updateQuestion();
+        question_textview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                currentIndex = (currentIndex+1)%questionBank.length;
+                updateQuestion();
+            }
+        });
 
         trueButton=(Button)findViewById(R.id.true_button);
         trueButton.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +60,7 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-        nextButton = (Button)findViewById(R.id.next_button);
+        nextButton = (ImageButton)findViewById(R.id.next_button);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +69,18 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
+        prevButton = (ImageButton)findViewById(R.id.prev_button);
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (currentIndex == 0) {
+                    currentIndex = questionBank.length;
+                } else {
+                    currentIndex = currentIndex-1;
+                    updateQuestion();
+                }
+            }
+        });
 
     }
 

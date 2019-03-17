@@ -13,8 +13,9 @@
     <string name="lokotkova">Локоткова вставила грудь на деньги одного из топ-менеджеров холдинга</string>
     <string name="nelly">Королева Неля уехала из Москвы за своей любовью в Воронеж </string>
     <string name="baturlova">Батурлова встречается с Колосковым и Абдуллином одновременно. Парни знают об этом, но ничего против не имеют</string>
-    <string name="correct_toast">Епто, да я сам видел</string>
+    <string name="correct_toast">Верный ответ</string>
     <string name="incorrect_toast">Ни хуя подобного</string>
+    <string name="prev_button">Prev</string>
 
 
 </resources>
