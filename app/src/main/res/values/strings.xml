@@ -5,4 +5,16 @@
     </string>
     <string name="true_button">Инфа сотка</string>
     <string name="false_button">Бред</string>
+    <string name="next_button">Next</string>
+
+
+    <string name="tis">Правда ли, что ТИС занимается своими делами в рабочее время?</string>
+    <string name="gorshkov">Слыхали!? Горшков нажрался пьяный и домогался до тренера в Ареале, но это увидел Цверкунов и заступился за девушку</string>
+    <string name="lokotkova">Локоткова вставила грудь на деньги одного из топ-менеджеров холдинга</string>
+    <string name="nelly">Королева Неля уехала из Москвы за своей любовью в Воронеж </string>
+    <string name="baturlova">Батурлова встречается с Колосковым и Абдуллином одновременно. Парни знают об этом, но ничего против не имеют</string>
+    <string name="correct_toast">Епто, да я сам видел</string>
+    <string name="incorrect_toast">Ни хуя подобного</string>
+
+
 </resources>
