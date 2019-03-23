@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public class QuizActivity extends AppCompatActivity {
     private Button falseButton;
     private ImageButton nextButton;
     private ImageButton prevButton;
-
+    private List<Question> questList;
     private Question[] questionBank = new Question[]{
       new Question(R.string.tis, true),
       new Question(R.string.gorshkov, false),
@@ -33,14 +34,19 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+        questList = new DataBuilder(getResources()).build();
+
+
 
         question_textview = (TextView)findViewById(R.id.question_text_view);
-        updateQuestion();
+        updateQuestionByList();
+        //updateQuestion();
         question_textview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 currentIndex = (currentIndex+1)%questionBank.length;
-                updateQuestion();
+                updateQuestionByList();
+                //updateQuestion();
             }
         });
 
@@ -65,7 +71,8 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 currentIndex = (currentIndex+1)%questionBank.length;
-                updateQuestion();
+                updateQuestionByList();
+                //updateQuestion();
             }
         });
 
@@ -77,7 +84,8 @@ public class QuizActivity extends AppCompatActivity {
                     currentIndex = questionBank.length;
                 } else {
                     currentIndex = currentIndex-1;
-                    updateQuestion();
+                    updateQuestionByList();
+                    //updateQuestion();
                 }
             }
         });
@@ -90,7 +98,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void chechAnswer(boolean userPressedTrue){
-        boolean answerIsTrue = questionBank[currentIndex].isAnswerTrue();
+        boolean answerIsTrue = questList.get(currentIndex).isAnswerTrue();
 
         int messageResId = 0;
 
@@ -101,4 +109,10 @@ public class QuizActivity extends AppCompatActivity {
         }
         Toast.makeText(this,messageResId,Toast.LENGTH_SHORT).show();
     }
+
+    private void updateQuestionByList(){
+    String question = questList.get(currentIndex).getTextQuest();
+    question_textview.setText(question);
+    }
+
 }

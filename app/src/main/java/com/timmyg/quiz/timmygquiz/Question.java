@@ -4,12 +4,21 @@ public class Question {
 
     private int textResId;
     private boolean isAnswerTrue;
+    private String textQuest;
+
 
     public Question(int textResId, boolean isAnswerTrue) {
 
         this.textResId = textResId;
         this.isAnswerTrue = isAnswerTrue;
     }
+
+    public Question(String question, boolean isAnswerTrue) {
+
+        this.textQuest = question;
+        this.isAnswerTrue = isAnswerTrue;
+    }
+
     public int getTextResId() {
         return textResId;
     }
@@ -25,4 +34,13 @@ public class Question {
     public void setAnswerTrue(boolean answerTrue) {
         isAnswerTrue = answerTrue;
     }
+
+    public String getTextQuest() {
+        return textQuest;
+    }
+
+    public void setTextQuest(String textQuest) {
+        this.textQuest = textQuest;
+    }
+
 }
