@@ -20,26 +20,25 @@ public class QuizActivity extends AppCompatActivity {
     private ImageButton nextButton;
     private ImageButton prevButton;
     private List<Question> questList;
-    private Question[] questionBank = new Question[]{
-      new Question(R.string.tis, true),
-      new Question(R.string.gorshkov, false),
-      new Question(R.string.lokotkova, false),
-      new Question(R.string.nelly, true),
-      new Question(R.string.baturlova, false),
-    };
+    private TextView textCounter;
 
     private int currentIndex = 0;
+
+    private int rightQuestion=0;
+    private int questionCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         questList = new DataBuilder(getResources()).build();
+        questionCount=questList.size();
 
-
+        textCounter = (TextView)findViewById(R.id.score);
 
         question_textview = (TextView)findViewById(R.id.question_text_view);
         updateQuestionByList();
+        updateCounter();
         question_textview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +98,7 @@ public class QuizActivity extends AppCompatActivity {
 
         if (userPressedTrue == answerIsTrue){
             messageResId = R.string.correct_toast;
+            rightQuestion++;
         } else {
             messageResId = R.string.incorrect_toast;
         }
@@ -106,6 +106,7 @@ public class QuizActivity extends AppCompatActivity {
         int tempIndex = currentIndex;
         currentIndex = (currentIndex+1)%questList.size();
         updateQuestionByList();
+        updateCounter();
         questList.remove(tempIndex);
         currentIndex--;
     }
@@ -113,6 +114,12 @@ public class QuizActivity extends AppCompatActivity {
     private void updateQuestionByList(){
     String question = questList.get(currentIndex).getTextQuest();
     question_textview.setText(question);
+    }
+
+    private void updateCounter(){
+        StringBuilder counter = new StringBuilder();
+        counter.append(rightQuestion).append("/").append(questionCount);
+        textCounter.setText(counter);
     }
 
 }
