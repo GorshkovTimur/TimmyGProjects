@@ -1,8 +1,10 @@
 package com.timmyg.quiz.timmygquiz;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -13,6 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
+
+    private final String R_INDEX="R_INDEX";
+    private final String QUESTION_COUNT="QUESTION_COUNT";
 
     private TextView question_textview;
     private Button trueButton;
@@ -37,58 +42,61 @@ public class QuizActivity extends AppCompatActivity {
         textCounter = (TextView)findViewById(R.id.score);
 
         question_textview = (TextView)findViewById(R.id.question_text_view);
-        updateQuestionByList();
-        updateCounter();
-        question_textview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                currentIndex = (currentIndex+1)%questList.size();
-                updateQuestionByList();
-            }
-        });
 
-        trueButton=(Button)findViewById(R.id.true_button);
-        trueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                chechAnswer(true);
-            }
-        });
 
-        falseButton=(Button)findViewById(R.id.false_button);
-        falseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                chechAnswer(false);
-            }
-        });
+            updateQuestionByList();
+            updateCounter();
+            question_textview.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    currentIndex = (currentIndex + 1) % questList.size();
+                    updateQuestionByList();
+                }
+            });
 
-        nextButton = (ImageButton)findViewById(R.id.next_button);
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                currentIndex = (currentIndex+1)%questList.size();
-                updateQuestionByList();
+            trueButton = (Button) findViewById(R.id.true_button);
+            trueButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    chechAnswer(true);
+                }
+            });
 
-            }
-        });
+            falseButton = (Button) findViewById(R.id.false_button);
+            falseButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    chechAnswer(false);
+                }
+            });
 
-        prevButton = (ImageButton)findViewById(R.id.prev_button);
-        prevButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (currentIndex == 0) {
-                    currentIndex = questList.size()-1;
-
-                } else {
-                    currentIndex = currentIndex-1;
+            nextButton = (ImageButton) findViewById(R.id.next_button);
+            nextButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    currentIndex = (currentIndex + 1) % questList.size();
+                    updateQuestionByList();
 
                 }
-                updateQuestionByList();
-            }
-        });
+            });
 
+            prevButton = (ImageButton) findViewById(R.id.prev_button);
+            prevButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (currentIndex == 0) {
+                        currentIndex = questList.size() - 1;
+
+                    } else {
+                        currentIndex = currentIndex - 1;
+
+                    }
+                    updateQuestionByList();
+                }
+            });
     }
+
+
 
 
     private void chechAnswer(boolean userPressedTrue){
@@ -109,6 +117,10 @@ public class QuizActivity extends AppCompatActivity {
         updateCounter();
         questList.remove(tempIndex);
         currentIndex--;
+        if (questList.size()==0){
+            startWinActivity();
+            finish();
+        }
     }
 
     private void updateQuestionByList(){
@@ -120,6 +132,13 @@ public class QuizActivity extends AppCompatActivity {
         StringBuilder counter = new StringBuilder();
         counter.append(rightQuestion).append("/").append(questionCount);
         textCounter.setText(counter);
+    }
+
+    private void startWinActivity() {
+        Intent intent = new Intent(this, WinnerScreenActivity.class);
+        intent.putExtra(R_INDEX,rightQuestion);
+        intent.putExtra(QUESTION_COUNT,questionCount);
+        startActivity(intent);
     }
 
 }
