@@ -18,7 +18,18 @@
     <string name="correct_toast">Верный ответ</string>
     <string name="incorrect_toast">Ни хуя подобного</string>
     <string name="prev_button">Prev</string>
-    <string name="win">Winner!</string>
+
+    <string name="win">Красавчик жи есть</string>
+    <string name="average">Ну так себе</string>
+    <string name="bad">Говноед!</string>
+    <string name="good_text">Ты знаешь все! Либо ты дружише Горшкевича, либо ты с ним спишь</string>
+    <string name="middle_text">Ты что то знаешь о внутренних сплетнях. Нужно больше общаться с Горшкевичем
+    или спать с ним</string>
+    <string name="dniwe_text">Ты не знаешь просто ни хуя! Горшкевич харнул бы тебе в рожу</string>
+
+
+
+
 
 
 </resources>

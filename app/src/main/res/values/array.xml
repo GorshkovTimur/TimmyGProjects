@@ -10,11 +10,11 @@
     </string-array>
 
     <integer-array name="answers">
-        <item>1</item><!-- герб Москвы -->
-        <item>0</item><!-- герб Санкт-Петербурга -->
-        <item>0</item><!-- герб Екатеринбурга -->
-        <item>1</item><!-- герб Новосибирска -->
-        <item>0</item><!-- герб Самары -->
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
     </integer-array>
 
 </resources>
