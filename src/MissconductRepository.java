@@ -29,4 +29,7 @@ public class MissconductRepository {
     }
 
 
+    //здесь будет куча методов для рабочей логики
+
+
 }
