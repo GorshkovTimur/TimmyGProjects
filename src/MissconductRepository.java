@@ -29,7 +29,9 @@ public class MissconductRepository {
     }
 
 
-    //здесь будет куча методов для рабочей логики
+    public void add (Missconduct missconduct){
+        missconducts.add(missconduct);
+    }
 
 
 }
