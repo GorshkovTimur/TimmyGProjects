@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class HeadOfGroup implements Person, Manager {
+public class HeadOfGroup implements Person, Manager,Subscriber {
 
     private int id;
     private String name;
@@ -20,5 +20,10 @@ public class HeadOfGroup implements Person, Manager {
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public void update() {
+        System.out.println(name + "Repositury changed");
     }
 }
