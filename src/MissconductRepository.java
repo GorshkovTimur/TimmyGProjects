@@ -29,4 +29,9 @@ public class MissconductRepository {
     }
 
 
+    public void add (Missconduct missconduct){
+        missconducts.add(missconduct);
+    }
+
+
 }
