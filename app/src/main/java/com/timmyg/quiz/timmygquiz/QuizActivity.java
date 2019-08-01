@@ -1,6 +1,5 @@
 package com.timmyg.quiz.timmygquiz;
 
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,8 +7,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class QuizActivity extends AppCompatActivity {
 
@@ -20,11 +17,11 @@ public class QuizActivity extends AppCompatActivity {
     private ImageButton prevButton;
 
     private Question[] questionBank = new Question[]{
-      new Question(R.string.tis, true),
-      new Question(R.string.gorshkov, false),
-      new Question(R.string.lokotkova, false),
-      new Question(R.string.nelly, true),
-      new Question(R.string.baturlova, false),
+      new Question(R.string.square, true),
+      new Question(R.string.java, false),
+      new Question(R.string.android, false),
+      new Question(R.string.oop, true),
+      new Question(R.string.python, false),
     };
 
     private int currentIndex = 0;

@@ -1,20 +1,17 @@
 <resources>
     <string name="app_name">TimmyGQuiz</string>
-    <string name="question_text">
-        Правда ли, что TIS в рабочее время занимается своими деоами
-    </string>
+
     <string name="true_button">Инфа сотка</string>
     <string name="false_button">Бред</string>
-    <string name="next_button">Next</string>
 
 
-    <string name="tis">Правда ли, что ТИС занимается своими делами в рабочее время?</string>
-    <string name="gorshkov">Слыхали!? Горшков нажрался пьяный и домогался до тренера в Ареале, но это увидел Цверкунов и заступился за девушку</string>
-    <string name="lokotkova">Локоткова вставила грудь на деньги одного из топ-менеджеров холдинга</string>
-    <string name="nelly">Королева Неля уехала из Москвы за своей любовью в Воронеж </string>
-    <string name="baturlova">Батурлова встречается с Колосковым и Абдуллином одновременно. Парни знают об этом, но ничего против не имеют</string>
-    <string name="correct_toast">Верный ответ</string>
-    <string name="incorrect_toast">Ни хуя подобного</string>
+    <string name="square">Квадрат имеет 4 стороны</string>
+    <string name="java">Java придумал Билл Гейтс</string>
+    <string name="android">Android - искусственный интеллект на базе AlphaStar</string>
+    <string name="oop">Java объектно ориентированный язык</string>
+    <string name="python">Python - одна из библиотек языка K#</string>
+    <string name="correct_toast">Правильно</string>
+    <string name="incorrect_toast">Неверно</string>
     <string name="prev_button">Prev</string>
 
 
