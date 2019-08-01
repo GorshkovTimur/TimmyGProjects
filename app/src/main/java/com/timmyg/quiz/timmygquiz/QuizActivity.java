@@ -16,6 +16,8 @@ public class QuizActivity extends AppCompatActivity {
     private ImageButton nextButton;
     private ImageButton prevButton;
 
+    //git бастует
+
     private Question[] questionBank = new Question[]{
       new Question(R.string.square, true),
       new Question(R.string.java, false),
