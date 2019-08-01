@@ -31,7 +31,7 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        question_textview = (TextView)findViewById(R.id.question_text_view);
+        question_textview = findViewById(R.id.question_text_view);
         updateQuestion();
         question_textview.setOnClickListener(new View.OnClickListener() {
             @Override
