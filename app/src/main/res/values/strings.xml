@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TimmyGQuiz</string>
+
+    <string name="true_button">Инфа сотка</string>
+    <string name="false_button">Бред</string>
+
+
+    <string name="square">Квадрат имеет 4 стороны</string>
+    <string name="java">Java придумал Билл Гейтс</string>
+    <string name="android">Android - искусственный интеллект на базе AlphaStar</string>
+    <string name="oop">Java объектно ориентированный язык</string>
+    <string name="python">Python - одна из библиотек языка K#</string>
+    <string name="correct_toast">Правильно</string>
+    <string name="incorrect_toast">Неверно</string>
+    <string name="prev_button">Prev</string>
+
+
+</resources>
